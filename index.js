@@ -41,3 +41,16 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+var scriptElement = document.createElement('script');
+
+// Set the type and source attributes
+scriptElement.type = 'text/javascript';
+scriptElement.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+
+// Append the script element to the document's head
+document.head.appendChild(scriptElement);
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
